@@ -1,4 +1,4 @@
-package ru.malyshev.embedded.Module;
+package ru.malyshev.embedded.module;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,7 +14,7 @@ import java.util.Map;
 @NoArgsConstructor
 
 @Entity
-@Table
+@Table(name = "module")
 public class Module extends MasterModule {
 
     @Column

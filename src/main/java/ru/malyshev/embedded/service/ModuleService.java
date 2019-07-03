@@ -1,9 +1,8 @@
-package ru.malyshev.embedded.Service;
+package ru.malyshev.embedded.service;
 
 
 
 import org.springframework.stereotype.Component;
-import ru.malyshev.embedded.DTO.ModuleDTO;
 
 import java.util.Collection;
 import java.util.Set;

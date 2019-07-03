@@ -1,10 +1,6 @@
-package ru.malyshev.embedded.Service;
+package ru.malyshev.embedded.service;
 
 
-import ru.malyshev.embedded.DTO.ModuleDTO;
-import ru.malyshev.embedded.Module.Module;
-import ru.malyshev.embedded.Module.ModuleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -13,8 +9,12 @@ import java.util.Set;
 @Service
 public class ModuleServiceImpl implements ModuleService {
 
+    /*private ModuleRepository moduleRepository;
+
     @Autowired
-    private ModuleRepository moduleRepository;
+    public ModuleServiceImpl(ModuleRepository moduleRepository) {
+        this.moduleRepository = moduleRepository;
+    }*/
 
 
     public Set<ModuleService> saveAllModules(Collection<ModuleService> moduleDTOS) {
@@ -35,7 +35,7 @@ public class ModuleServiceImpl implements ModuleService {
 
    /* public ModuleDTO editModule(ModuleDTO module) {
         if(module != null) {
-            Module dbModule =moduleRepository.findByNameAndModuleVersion(module.getName(), module.getModuleVersion());
+            module dbModule =moduleRepository.findByNameAndModuleVersion(module.getName(), module.getModuleVersion());
             if (dbModule != null){
                 module.setId(dbModule.getId());
             }

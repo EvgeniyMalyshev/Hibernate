@@ -1,4 +1,4 @@
-package ru.malyshev.embedded.Module;
+package ru.malyshev.embedded.module;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

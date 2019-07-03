@@ -1,4 +1,4 @@
-package ru.malyshev.embedded.DTO;
+package ru.malyshev.embedded.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

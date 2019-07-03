@@ -1,4 +1,4 @@
-package ru.malyshev.embedded.Config;
+package ru.malyshev.embedded.config;
 
 
 import org.hibernate.jpa.HibernatePersistenceProvider;
