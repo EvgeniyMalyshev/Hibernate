@@ -1,7 +1,12 @@
 package ru.malyshev.embedded.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.malyshev.embedded.converter.ModuleConverter;
+import ru.malyshev.embedded.dto.ModuleDTO;
+import ru.malyshev.embedded.module.Module;
+import ru.malyshev.embedded.module.ModuleRepository;
 
 import java.util.Collection;
 import java.util.Set;
@@ -9,38 +14,23 @@ import java.util.Set;
 @Service
 public class ModuleServiceImpl implements ModuleService {
 
-    /*private ModuleRepository moduleRepository;
+    @Autowired
+    private ModuleRepository moduleRepository;
+    @Autowired
+    private ModuleConverter converter;
 
     @Autowired
     public ModuleServiceImpl(ModuleRepository moduleRepository) {
         this.moduleRepository = moduleRepository;
-    }*/
-
-
-    public Set<ModuleService> saveAllModules(Collection<ModuleService> moduleDTOS) {
-        return null;
     }
 
-    public void deleteModule(Long id) {
-
+    public Set<ModuleDTO> getByName(String name) {
+        return converter.convertToModuleDtoList(moduleRepository.findByName(name));
     }
 
-    public ModuleService getById(Long id) {
-        return null;
+    public Set<ModuleDTO> getByModuleId(String moduleId) {
+        return converter.convertToModuleDtoList(moduleRepository.findByModuleId(moduleId));
     }
 
-    /*public ModuleDTO addModule(ModuleDTO moduleDTO) {
-        return editModule(moduleDTO);
-    }*/
 
-   /* public ModuleDTO editModule(ModuleDTO module) {
-        if(module != null) {
-            module dbModule =moduleRepository.findByNameAndModuleVersion(module.getName(), module.getModuleVersion());
-            if (dbModule != null){
-                module.setId(dbModule.getId());
-            }
-            return  module;
-        }
-        return  null;
-    }*/
 }

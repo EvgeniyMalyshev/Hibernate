@@ -12,9 +12,9 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-@Entity
 @Table(name = "module")
+@Entity
+
 public class Module extends MasterModule {
 
     @Column

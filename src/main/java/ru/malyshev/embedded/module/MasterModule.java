@@ -10,6 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 
+
 @MappedSuperclass
 public class MasterModule {
 
