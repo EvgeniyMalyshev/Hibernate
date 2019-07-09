@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-
 public interface ModuleRepository extends JpaRepository<Module,Long>, JpaSpecificationExecutor<Module> {
 
     @Query("select m from Module m where m.name = :name")

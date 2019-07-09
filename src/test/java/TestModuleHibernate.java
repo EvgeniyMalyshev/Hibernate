@@ -23,7 +23,7 @@ public class TestModuleHibernate {
 
     @Test
     public void test(){
-        Module module = new Module();
+        Module module = new Module(1L, 123L, "testName", "1.0", "1.0.0", new HashMap<>());
         Map<String,String> map = new HashMap<>();
         map.put("key","value");
         module.setModuleVersion("0.0.1");

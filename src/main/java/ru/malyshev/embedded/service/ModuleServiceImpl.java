@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.malyshev.embedded.converter.ModuleConverter;
 import ru.malyshev.embedded.dto.ModuleDTO;
-import ru.malyshev.embedded.module.Module;
 import ru.malyshev.embedded.module.ModuleRepository;
-
-import java.util.Collection;
 import java.util.Set;
 
 @Service
