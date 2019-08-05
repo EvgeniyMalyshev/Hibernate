@@ -18,7 +18,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"ru.malyshev.embedded"})
-@PropertySource("classpath:db.properties")
+@PropertySource("classpath:hibernate.properties")
 public class DbConfig {
     private static final String PROP_HIBERNATE_DIALECT = "hibernate.dialect";
     private static final String PROP_HIBERNATE_SHOW_SQL = "hibernate.show_sql";

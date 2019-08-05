@@ -1,19 +1,25 @@
 package ru.malyshev.embedded.module;
 
+import com.sun.javafx.beans.IDProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+import ru.malyshev.embedded.metric.Metric;
 
 import javax.persistence.*;
-import java.util.Map;
 
 @Data
+@DynamicInsert
+@DynamicUpdate
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "module")
 @Entity
 public class Module extends MasterModule {
+
 
     @Column
     private String moduleVersion;
@@ -21,18 +27,14 @@ public class Module extends MasterModule {
     @Column
     private String versionState;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "params", joinColumns = @JoinColumn(name = "MODULE_ID", referencedColumnName = "id"))
-    @MapKeyColumn(name = "PARAM_KEY")
-    @Column(name = "PARAM_VALUE")
-    private Map<String,String> params;
+    @OneToOne
+    private Metric metric;
 
     @Builder
-    public Module(Long id, Long moduleId, String name, String moduleVersion, String versionState, Map <String, String> params){
+    public Module(Long id, Long moduleId, String name, String moduleVersion, String versionState){
         super(id,moduleId,name);
         this.moduleVersion = moduleVersion;
         this.versionState = versionState;
-        this.params = params;
     }
 
 }
