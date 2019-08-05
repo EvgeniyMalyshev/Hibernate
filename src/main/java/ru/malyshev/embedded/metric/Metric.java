@@ -26,7 +26,7 @@ public class Metric {
     @Column(name = "name", nullable = false)
     private String metricName;
 
-    @OneToOne(mappedBy = "metric")
+    @OneToOne
     private Module module;
 
     @Builder

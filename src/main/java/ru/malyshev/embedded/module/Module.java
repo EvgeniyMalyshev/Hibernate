@@ -8,8 +8,11 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import ru.malyshev.embedded.metric.Metric;
+import ru.malyshev.embedded.production.line.ProductionLine;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @DynamicInsert
@@ -29,6 +32,9 @@ public class Module extends MasterModule {
 
     @OneToOne
     private Metric metric;
+
+    @OneToMany(mappedBy = "productionName")
+    private List<ProductionLine> productionLine = new ArrayList<>();
 
     @Builder
     public Module(Long id, Long moduleId, String name, String moduleVersion, String versionState){
